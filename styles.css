@@ -1,0 +1,461 @@
+body {
+    background: #181818;
+    color: #eee;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header#topHeader {
+    background: #222;
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header#topHeader nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background .2s;
+}
+
+header#topHeader nav a:hover {
+    background: #444;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 0;
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 24px;
+    background: #232323;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px #0008;
+    width: 90%;
+    min-width: 320px;
+    padding-bottom: 80px !important; /* reserve space for footer */
+}
+
+
+.user-list-container h2 {
+    text-align: center;
+}
+
+.user-list-table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #0003;
+}
+
+.user-list-table td {
+    vertical-align: middle;
+}
+
+/* Flex row for action buttons with dark bg */
+.actions-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #222;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin: 0;
+    width: fit-content;
+    
+}
+
+/* Action Buttons */
+.action-btn {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 5px 12px;      /* Smaller padding */
+    border: none;
+    border-radius: 6px;     /* Slightly smaller radius */
+    font-size: 13px;        /* Smaller font */
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+    vertical-align: middle;
+    box-shadow: 0 2px 6px #0002;
+    min-width: 80px;        /* Optional: minimum width for uniformity */
+}
+.action-btn:last-child {
+    margin-right: 0;
+}
+.action-btn .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    height: 42px;
+    background: #181818;
+}
+
+.action-btn .btn-text {
+    flex: 1;
+    padding: 0 22px 0 12px;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #dc3545 !important;
+}
+.delete-btn:hover { background: #a71d2a !important; }
+
+.terminate-btn {
+    background: #ff7f2a !important;
+}
+.terminate-btn:hover { background: #c35c00 !important; }
+
+.block-vm-btn {
+    background: #8e44ad !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+.block-vm-btn:hover { background: #5e3370 !important; }
+
+.approve-btn {
+    background: #28a745 !important;
+}
+.approve-btn:hover { background: #19692c !important; }
+
+.deny-btn {
+    background: #c82333 !important;
+}
+.deny-btn:hover { background: #78121c !important; }
+
+/* Brown Disable/Toggle Approve-Deny */
+.disable-btn {
+    background: #8B5C2A !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+.disable-btn:hover { background: #6e431b !important; }
+
+a.disabled, .disabled {
+    background: #555 !important;
+    color: #bbb !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    opacity: .6;
+}
+
+/* Separator ("X" button style) */
+.action-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #181818;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 36px;
+    height: 42px;
+    border-radius: 7px;
+    margin: 0;
+    border: none;
+    outline: none;
+    cursor: default;
+    user-select: none;
+}
+
+.message {
+    background: #173017;
+    color: #61e561;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.error {
+    background: #2e1717;
+    color: #ffb3b3;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* ---- Login/Register Form Styling ---- */
+.form-box {
+    background: #232323;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px #0008;
+    padding: 36px 32px 28px 32px;
+    min-width: 320px;
+    max-width: 400px;
+    width: 100%;
+    margin: 36px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 26px;
+    color: #fff;
+    text-align: center;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.form-box label {
+    color: #eee;
+    margin-bottom: 5px;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="email"] {
+    background: #181818;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1.07em;
+    width: 90%;
+    margin-bottom: 8px;
+    outline: none;
+    transition: border .2s;
+    text-align: center;
+    display: block;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus,
+.form-box input[type="email"]:focus {
+    border-color: #8e44ad;
+}
+
+.form-box button,
+.form-box input[type="submit"] {
+    border: none;
+    border-radius: 7px;
+    padding: 12px 0;
+    font-size: 1.08em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background .17s;
+    box-shadow: 0 2px 8px #0003;
+    width: 90%;
+    text-align: center;
+}
+
+.form-box .login-btn {
+    background: #28a745;
+    color: #fff;
+}
+.form-box .login-btn:hover {
+    background: #19692c;
+}
+
+.form-box .register-btn {
+    background: #2980f3;
+    color: #fff;
+}
+.form-box .register-btn:hover {
+    background: #1451a3;
+}
+
+.form-box .form-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #bbb;
+    font-size: 1em;
+}
+
+.form-box .form-footer a {
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color .2s;
+}
+.form-box .form-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- New/Updated code for bottom nav --- */
+
+/* Bottom fixed header/nav bar */
+#bottomHeader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #222;
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-top: 2px solid #333;
+}
+#bottomHeader nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background .2s;
+}
+#bottomHeader nav a:hover {
+    background: #444;
+}
+
+/* Welcome card text classes */
+.admin-title, .user-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #8e44ad;
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.admin-title {
+    color: #28a745;
+}
+.welcome-msg {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.admin-highlight {
+    color: #28a745;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.desc {
+    font-size: 1em;
+    color: #bbb;
+    margin-bottom: 24px;
+    text-align: center;
+}
+/* Show My Virtual Machine button styling */
+#showVmBtn.action-btn.approve-btn {
+    width: 100%;
+    font-size: 1.15em;
+    padding: 15px 0;
+    margin-top: 16px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #0005;
+    /* Center the button text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* VM Container - inside main, not fullscreen */
+#hyperbeamContainer {
+    flex: 1 1 auto;
+    width: 100%;
+    display: none; /* default hidden, shown via JS */
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+#virtualComputerDiv {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px #0008;
+}
+
+/* --- Force Logout Button Blue Styling --- */
+.force-logout-btn {
+    background: #2980f3 !important;   /* Bright blue */
+    color: #fff !important;
+}
+.force-logout-btn:hover {
+    background: #1451a3 !important;   /* Deeper blue on hover */
+}
+.force-logout-btn.disabled,
+.action-btn.force-logout-btn.disabled {
+    background: #555 !important;
+    color: #bbb !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    opacity: .6;
+}
+
+.user-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #181818;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #000a;
+}
+
+.user-list-table th, .user-list-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+.user-list-table th {
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.user-list-table tr:last-child td {
+    border-bottom: none;
+}
+
+.user-list-table tr:hover {
+    background: #232323;
+}
+
+.user-list-table td .none-value {
+    color: #bbb;
+    font-style: italic;
+}
